@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+a {
+  text-decoration: none;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: rgb(47, 62, 70);
+  position: fixed;
+  z-index: 400;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.409);
+}
+nav > .menu {
+  padding: 15px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white !important;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.27s;
+}
+nav > .menu:hover {
+  background-color: white;
+  color: rgb(47, 62, 70) !important;
+}
+nav > .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 31px;
+  font-weight: bolder;
+}
+.sp-white {
+  color: white;
+}
+.sp-green {
+  color: rgb(0, 168, 150);
+}
+nav > .logo > i {
+  animation: rotateScale 5s ease infinite;
+}
+@keyframes rotateScale {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(15deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+.appointment {
+  white-space: nowrap;
+  padding: 20px 30px;
+  background-color: rgb(2, 195, 154);
+  font-size: 16px;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  text-transform: uppercase;
+  position: absolute;
+  transition: all 0.3s;
+  z-index: 100;
+  cursor: pointer;
+}
+.appointment:hover {
+  transform: translateY(-2px);
+  background-color: rgb(0, 168, 150);
+}
+.appointment:active {
+  transform: scale(0.9);
+}
+main {
+  margin-top: 70px;
+}
+main > .article-1 {
+  padding: 120px 0 0 520px;
+  color: white;
+  background-color: rgba(199, 199, 199, 0.226);
+  position: relative;
+  height: 750px;
+}
+main > .article-1 > .rounded-bg {
+  background-color: rgb(41, 51, 56);
+  width: 100%;
+  height: 82%;
+  border-radius: 0 0 70px 70px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+main > .article-1 >h2 {
+  color: #02c39a;
+  font-size: 50px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  z-index: 100;
+  position: relative;
+}
+main > .article-1 >h2::first-line {
+  color: white;
+}
+main > .article-1 > p{
+  font-size: 20px;
+  padding-right: 100px;
+  color: rgba(240, 255, 255, 0.854);
+  line-height: 30px;
+  margin-bottom: 50px;
+  z-index: 100;
+  position: relative;
+}
+main > .article-1 > .contact-us{
+  padding: 15px 30px;
+  background-color: transparent;
+  font-size: 16px;
+  color: white;
+  border: 5px solid white;
+  right: 300px;
+  font-weight: 700;
+  border-radius: 50px;
+  text-transform: uppercase;
+  position: absolute;
+  transition: all 0.3s;
+}
+main > .article-1 > .contact-us:hover{
+  transform: translateY(-2px);
+  color: rgb(0, 168, 150);
+  border-color: rgb(0, 168, 150);
+}
+main > .article-1 > .contact-us:active{
+  transform: scale(0.9);
+}
+main > .article-1 > .note{
+  background-color: rgb(47, 62, 70);
+  position: absolute;
+  padding: 20px 90px 20px 340px;
+  border-radius: 10px;
+  top: 550px;
+  left: 200px;
+}
+main > .article-1 > .note >img{
+    position: absolute;
+    left: 0px;
+    top: -380px;
+}
+main > .article-1 > .note >h2{
+    color: #069a7a;
+  font-size: 30px;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 20px;
+}
+main > .article-1 > .note >p{
+  font-size: 15px;
+  padding-right: 100px;
+  color: rgba(240, 255, 255, 0.854);
+  line-height: 30px;
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+main > .article-1 > .note > .appointment{
+  bottom: -29px;
+  position: absolute;
+}
+main > .article-2,main > .article-3{
+    padding: 150px 100px 100px;
+    margin-bottom: 100px;
+}
+main > .article-2 >h2,main > .article-3 >h2{
+    text-align: center;
+    color: #2f3e46;
+    font-size: 40px;
+    font-weight: 700;
+}
+main > .article-2 >hr,main > .article-3 >hr{
+    background-color: rgb(2, 195, 154);
+    height: 4px;
+    width: 80px;
+    border-radius: 2px;
+    margin: 30px auto 50px;
+}
+main> .article-2 >.card-cont{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+main > .article-2 > .card-cont >.card {
+    border: 1px solid rgba(0, 0, 0, 0.121);
+    display: flex;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0px 2px 20px rgba(127, 127, 127, 0.146);
+    justify-content: center;
+    background-color: rgba(191, 191, 191, 0.199);
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 23%;
+    margin: 15px;
+    transition: all 0.3s;
+}
+main > .article-2 > .card-cont >.card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 3px 20px rgba(121, 120, 120, 0.326);
+}
+main > .article-2 > .card-cont >.card >i{
+    font-size: 48px;
+    color: rgb(0, 168, 150);
+    transition: all 0.3s;
+    margin: 10px;
+}
+main > .article-2 > .card-cont >.card:hover >i{
+    transform: scale(1.1);
+    color: rgb(2, 195, 154);
+}
+main > .article-2 > .card-cont >.card >h3{
+    color: rgb(47, 62, 70);
+    font-size: 19px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+main > .article-2 > .card-cont >.card >p{
+    text-align: center;
+    line-height: 25.6px;
+}
+main > .article-2 > h3{
+    margin: 25px 0;
+    font-size: 28.8px;
+    color: rgb(0, 168, 150);
+    font-weight: 700;
+    text-align: center;
+}
+main> .article-2 >.card-cont-2{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+main > .article-2 > .card-cont-2 >.card {
+    border: 1px solid rgba(0, 0, 0, 0.121);
+    display: flex;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0px 2px 20px rgba(127, 127, 127, 0.146);
+    justify-content: center;
+    width: 300px;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin: 15px;
+    transition: all 0.3s;
+}
+main > .article-2 > .card-cont-2 >.card:hover{
+    transform: scale(1.01);
+    box-shadow: 0px 3px 20px rgba(121, 120, 120, 0.326);
+}
+main > .article-2 > .card-cont-2 >.card >img{
+    width: 100%;
+    height: 320px;
+}
+main > .article-2 > .card-cont-2 >.card >h5{
+    color: rgb(47, 62, 70);
+    font-size: 19px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+main > .article-2 > .card-cont-2 >.card >p{
+    text-align: center;
+    color: #069a7a;
+    font-style: italic;
+    line-height: 25.6px;
+}
+main > .article-3{
+  background-color: rgba(199, 199, 199, 0.226);
+  margin: 0;
+}
+main> .article-3 >.card-cont,main> .article-3 >.card-cont-2{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+main > .article-3 > .card-cont >.card,main > .article-3 > .card-cont-2 >.card {
+    border-bottom: 4px solid transparent;
+    display: flex;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0px 2px 20px rgba(127, 127, 127, 0.146);
+    justify-content: center;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    transition: all 0.3s;
+    width: 32%;
+}
+main > .article-3 > .card-cont >.card:hover,main > .article-3 > .card-cont-2 >.card:hover{
+    transform: translateY(-2px);
+    box-shadow: 0px 3px 20px rgba(121, 120, 120, 0.326);
+    border-bottom-color: #02c39a;
+}
+main > .article-3 > .card-cont >.card >i,main > .article-3 > .card-cont-2 >.card >i{
+    font-size: 48px;
+    color: rgb(2, 195, 154);;
+    transition: all 0.3s;
+    margin: 10px;
+}
+main > .article-3 > .card-cont >.card >h3,main > .article-3 > .card-cont-2 >.card >h3{
+    color: rgb(47, 62, 70);
+    font-size: 19px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+main > .article-3 > .card-cont >.card >p,main > .article-3 > .card-cont-2 >.card >p{
+    text-align: center;
+    line-height: 25.6px;
+}
+main >.article-4{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(0, 168, 150);
+  padding: 70px 0;
+  color: white !important;
+}
+main >.article-4 > .box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: row;
+}
+main >.article-4 > .box > i{
+  font-size: 48px;
+  margin-right: 10px;
+}
+main >.article-4 > .box > .content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+main >.article-4 > .box > .content>.number{
+  font-size: 40px;
+  font-weight: bolder;
+}
+footer{
+  padding: 80px 100px 0;
+  background-color: #2f3e46;
+  width: 100%;
+}
+footer > .about{
+  display: flex;
+  justify-content: flex-start;
+}
+footer > .about>.box{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-right: 50px;
+  font-size: 1.1rem;
+}
+footer > .about>.box >h2{
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #02c39a;
+  margin-bottom: 20px;
+}
+footer > .about>.box >h3{
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #02c39a;
+  margin-bottom: 30px;
+}
+footer > .about>.box >p{
+  line-height: 30px;
+}
+footer > .about>.box >a{
+  color: white;
+  margin-bottom: 10px;
+  transition: all 0.5s;
+}
+footer > .about>.box >a:hover{
+  color: #02c39a;
+  transform: translateX(6px);
+}
+footer > .about>.box >a:hover>.fas{
+  transition: all 0.4s;
+}
+footer > .about>.box >a:hover>.fa-facebook-f{
+  color: rgb(6, 132, 235);
+}
+footer > .about>.box >a:hover>.fa-twitter{
+  color: rgb(6, 159, 235);
+}
+footer > .about>.box >a:hover>.fa-linkedin-in{
+  color: rgb(6, 79, 235);
+}
+footer > .about>.box >a:hover>.fa-instagram{
+  color: rgb(235, 6, 227);
+}
+footer > .hr{
+  margin: 40px 0px 0px;
+  opacity: 0.2;
+}
+footer > p{
+  margin: 20px 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.523);
+}

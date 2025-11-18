@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Login Page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: sans-serif;
+      }
+      body {
+        background-image: linear-gradient(to right, #07342b, #075342);
+      }
+      .cont {
+        margin: 5px 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        overflow: hidden;
+        height: 700px;
+      }
+      .left {
+        width: 50%;
+        height: 100%;
+        position: relative;
+        top: 0;
+        overflow: hidden;
+      }
+      .left > img {
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+        transform: scale(1);
+        z-index: -3;
+        transition: all 0.3s;
+      }
+      .left:hover > img {
+        transform: scale(1.03);
+      }
+      .left > .overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -2;
+        background-color: #00a8975f;
+      }
+      .left > h2,
+      .left > p {
+        text-align: center;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -150%);
+        color: white;
+      }
+      .left > h2 {
+        font-size: 40px;
+        width: 100%;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.744);
+      }
+      .left > p {
+        transform: translate(-50%, 50%);
+        width: 70%;
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.628);
+      }
+      .right {
+        width: 50%;
+        padding: 50px;
+        height: 100%;
+        background-color: white;
+        position: relative;
+      }
+      .right > h2 {
+        color: #01766a;
+        font-size: 2.5rem;
+        font-weight: 800;
+      }
+      .right > .amiate_hr {
+        width: 15%;
+        height: 4px;
+        border-radius: 3px;
+        background-image: linear-gradient(to right, #01766a, #36cfc0);
+        transition: all 0.5s;
+        margin: 10px 0 50px;
+      }
+      .right:hover > .amiate_hr {
+        width: 100% !important;
+      }
+      .right > p {
+        margin: 25px 0;
+        color: rgb(47, 62, 70);
+        font-size: 16px;
+      }
+      .right > p > a {
+        color: rgb(2, 195, 154);
+        font-size: 16px;
+        position: relative;
+      }
+      .right > p > a::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        color: rgb(2, 195, 154);
+        width: 0%;
+        height: 4px;
+        border-radius: 3px;
+        background-color: rgb(2, 195, 154);
+        transition: all 0.5s;
+        margin: 10px 0;
+      }
+      .right > p > a:hover::before {
+        width: 110%;
+      }
+      form > .input {
+        position: relative;
+      }
+      form > .input > label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #01766a;
+        transform: all 0.3s;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+      form > .input > label::before {
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background: #02c39a;
+        border-radius: 50%;
+        margin-right: 8px;
+        vertical-align: middle;
+        transition: transform 0.3s ease;
+      }
+      form > .input > input {
+        border-color: rgba(76, 175, 80, 0.3);
+        margin-bottom: 10px;
+        width: 100%;
+        height: 50px;
+        padding: 10px 45px 10px 15px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        font-size: 1rem;
+        outline: none;
+        transition: all 0.3s;
+        background: rgba(248, 249, 250, 0.5);
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      form > .input > input:focus {
+        border-color: #02c3997a;
+        box-shadow: 0px 0px 10px #02c39977;
+      }
+      form > .input > input ~ i {
+        position: absolute;
+        top: 46%;
+        color: #02c39a;
+        left: 90%;
+        font-size: 1.3rem;
+        background-color: rgba(255, 255, 255, 0.514);
+        transition: all 0.3s;
+      }
+      form > .input > input:focus ~ i {
+        top: 21%;
+      }
+      form > button {
+        width: 100%;
+        margin: 35px 0;
+        padding: 15px 0;
+        background-image: linear-gradient(135deg, #02c39a, #158dac);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: background-image 0.2s;
+      }
+      form > button:hover {
+        background-image: linear-gradient(135deg, #158dac, #02c39a);
+      }
+      .right > .ol {
+        padding: 10px 30px;
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 70%;
+        background-color: white;
+      }
+      .right > .st-hr {
+        position: absolute;
+        top: 76%;
+        width: 80%;
+        height: 1px;
+        opacity: 0.3;
+      }
+      .right > .brand-icons {
+        margin: 80px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 20px;
+      }
+      .right > .brand-icons > .icons.fa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+        color: #3b5998;
+      }
+      .right > .brand-icons > .icons.go {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+        color: #c62828;
+      }
+      .right > .brand-icons > .icons.fa:hover {
+        background-color: #3b5998;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.349);
+      }
+      .right > .brand-icons > .icons.go:hover {
+        background-color: #c62828;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.349);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <div class="left">
+        <img
+          src="https://medical-care-site.netlify.app/assets/login-image.jpg"
+          alt=""
+        />
+        <div class="overlay"></div>
+        <h2>Welcome Back!</h2>
+        <p>
+          Sign in to access exclusive updates and get appointment of our
+          experienced doctors
+        </p>
+      </div>
+      <div class="right">
+        <h2>Login</h2>
+        <hr class="amiate_hr" />
+        <p>Don't have an account? <a href="#">Register </a></p>
+        <form>
+          <div class="input">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Enter your email"
+            />
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </div>
+          <div class="input">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter your passowrd"
+            /><i class="fa-solid fa-lock" aria-hidden="true"></i>
+          </div>
+          <button>Login</button>
+        </form>
+        <hr class="st-hr" />
+        <p class="ol">Or Login With</p>
+        <div class="brand-icons">
+          <a href="#" class="icons fa" style="border: 2px solid #3b5998"
+            ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+          ></a>
+          <a href="#" class="icons go" style="border: 2px solid #c62828"
+            ><i class="fa-brands fa-google" aria-hidden="true"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
